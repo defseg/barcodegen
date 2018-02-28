@@ -1,0 +1,68 @@
+<html>
+<head>
+	<title>Code 128-B Barcode Generator</title>
+	<script src='lib/symbology.js'></script>
+	<script src='lib/code128b.js'></script>
+	<script src='lib/barcode.js'></script>
+	<style type='text/css'>
+		canvas { 
+			image-rendering: optimizeSpeed; 
+			image-rendering: -moz-crisp-edges; 
+			image-rendering: -webkit-optimize-contrast; 
+			image-rendering: -o-crisp-edges;
+			image-rendering: optimize-contrast;
+			-ms-interpolation-mode: nearest-neighbor; 
+		}
+		body {
+			text-align: center;
+		}
+		.canvas-box {
+			padding-top: 10%;
+		}
+		.settings {
+			padding-top: 10%;
+		}
+		label {
+			display: block;
+		}
+		label > input {
+			width: 4em;
+		}
+
+	</style>
+</head>
+<body>
+	<div class='canvas-box'>
+		<canvas id='out' width=500px height=100px>
+		</canvas>
+	<br>
+	<div class='input-box'>
+		<input id='in'>
+	</div>
+	<div class='settings'>
+		<label>Bar height: 
+			<input id='setHeight' type=number value=20 size="2">
+		</label>
+		<label>Bar width:
+			<input id='setWidth' type=number value=1 size="2">
+		</label>
+	</div>
+
+	<script type='text/javascript'>
+		var input  = document.getElementById('in');
+		var canvas = document.getElementById('out');
+		var ctx    = canvas.getContext('2d');
+		var hInp   = document.getElementById('setHeight');
+		var wInp   = document.getElementById('setWidth');
+		var gen    = new BG.BGen({
+			'ctx'    : ctx
+			,'canvas': canvas
+			,'input' : input
+			,'height': hInp.value
+			,'width' : wInp.value
+			,'heightInput': hInp
+			,'widthInput' : wInp
+		});
+	</script>
+</body>
+</html>
