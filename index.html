@@ -27,25 +27,31 @@
 		label > input {
 			width: 4em;
 		}
+		main {
+			width: 50%;
+			float: left;
+		}
 
 	</style>
 </head>
 <body>
-	<div class='canvas-box'>
-		<canvas id='out' width=500px height=100px>
-		</canvas>
-	</div>
-	<div class='input-box'>
-		<input id='in'>
-	</div>
-	<div class='settings'>
-		<label>Bar height: 
-			<input id='setHeight' type=number value=40 size="2">
-		</label>
-		<label>Bar width:
-			<input id='setWidth' type=number value=2 size="2">
-		</label>
-	</div>
+	<main>
+		<div class='canvas-box'>
+			<canvas id='out' width=500px height=100px>
+			</canvas>
+		</div>
+			<div class='input-box'>
+			<input id='in'>
+		</div>
+		<div class='settings'>
+			<label>Bar height:
+				<input id='setHeight' type=number value=40 size="2">
+			</label>
+			<label>Bar width:
+				<input id='setWidth' type=number value=2 size="2">
+			</label>
+		</div>
+	</main>
 
 	<script type='text/javascript'>
 		var input  = document.getElementById('in');
